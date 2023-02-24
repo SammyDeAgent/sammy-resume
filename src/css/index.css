@@ -1,0 +1,133 @@
+:root {
+  /* Colour Variables */
+  --absolute-white: #FFFFFF;
+  --absolute-black: #000000;
+  --bright-yellow: #FFE900;
+  --ash-grey: #B2BEB5;
+  --dark-grey: #808080;
+  --electric-blue: #59CBE8;
+  --dark-electric-blue: #4e6fc9;
+  --chartreuse: #7FFF00;
+}
+
+html {
+  background-color: var(--electric-blue);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 0.7rem;
+  }
+
+  .center-card {
+    margin: 1rem 2rem;
+    padding: 1rem;
+  }
+  
+  #section_0 {
+    grid-template: 
+    "a" auto
+    "b" auto;
+  }
+}
+
+/* Notes: top left bottom right */
+
+.center-card {
+  margin: 2rem 5rem;
+  padding: 2rem;
+  background-color: var(--absolute-white);
+  box-shadow: 0 2px 3px 0 var(--dark-electric-blue);
+  border-radius: 4px 4px;
+}
+
+.section {
+  margin: 1rem;
+}
+
+.section-divider {
+  margin: 0 1rem;
+}
+
+/*==========================================================================*/
+
+#section_0 {
+  display: grid;
+  grid-template: "a b b b b b b b" auto;
+}
+
+.portrait-wrapper {
+  grid-area: a;
+  width: 20%;
+}
+
+.resume-portrait {
+  width: auto;
+  height: 15rem;
+}
+
+.resume-portrait:hover {
+  animation: 0.4s boop-effect ease-in-out;
+  box-shadow: 0 2px 3px 0 var(--dark-grey);
+}
+
+.address-wrapper {
+  grid-area: b;
+  padding-left: 1rem;
+}
+
+.address-wrapper .name {
+  font-size: 3rem;
+}
+
+.details-wrapper {
+  font-size: 1.3rem;
+}
+
+.details-wrapper a {
+  display: block;
+  text-decoration: none;
+  max-width: max-content;
+}
+
+/*==========================================================================*/
+
+/* Components */
+.hovertext {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  background-color: var(--absolute-black);
+  color: var(--absolute-white);
+
+  visibility: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+div:hover > .hovertext{
+  visibility: visible;
+  opacity: 1;
+}
+
+/*==========================================================================*/
+
+/* Animations */
+@keyframes boop-effect {
+  0% {
+    transform: translate(0, 0rem);
+  }
+  50% {
+    transform: translate(0, -0.2rem);
+  }
+  100% {
+    transform: translate(0, 0rem);
+  }
+}
+
