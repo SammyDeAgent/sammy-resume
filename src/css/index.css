@@ -64,6 +64,40 @@ html {
 
 /*==========================================================================*/
 
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: auto;
+}
+
+.tabs_label {
+  cursor: pointer;
+  padding: 1rem 1rem;
+}
+
+.tabs_radio{
+  display: none;
+}
+
+.tabs_content {
+  order: 1;
+  width: 100%;
+  line-height: 1.5;
+  /* border-bottom: 3px solid var(--dark-grey); */
+  display: none;
+}
+
+.tabs_radio:checked+.tabs_label{
+  font-weight: bold;
+  border-bottom: 2px solid var(--dark-grey);
+}
+
+.tabs_radio:checked+.tabs_label+.tabs_content{
+  display: initial;
+}
+
+/*==========================================================================*/
+
 #section_0 {
   display: grid;
   grid-template: "a b b b b b b b" auto;
